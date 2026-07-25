@@ -13,7 +13,7 @@ export const SocketContextProvider=({children})=>{
     const {authUser} = useAuth();
     useEffect(()=>{
         if(authUser){
-            const socket = io("http://localhost:3000/",{
+            const socket = io("https://convox-1-x5rm.onrender.com/",{
                 query:{
                     userId:authUser?._id,
                 }
