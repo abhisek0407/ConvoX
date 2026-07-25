@@ -1,4 +1,4 @@
-# RealTimeChat 💬
+# ConvoX: Real Time Chat Application 💬
 
 A full-stack real-time chat application built with **Node.js, Express, MongoDB** on the backend and **React (Vite) + Tailwind CSS** on the frontend. Users can register, log in, search for other users, and exchange messages within persistent conversations.
 
