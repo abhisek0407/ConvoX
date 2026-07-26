@@ -8,7 +8,7 @@ export default defineConfig({
   server:{
     proxy:{
       '/api':{
-        target:'https://convox-1-x5rm.onrender.com/',
+        target:'http://localhost:3000/',
         secure:false
       }
     }

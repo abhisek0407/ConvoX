@@ -5,9 +5,11 @@ export const userRegister = async (req, res) => {
   try {
     const { fullname, username, email, gender, password, profilePic } =
       req.body;
-    const user = await User.findOne({ username, email });
+    const user = await User.findOne({
+      $or: [{ username }, { email }],
+    });
     if (user)
-      return resizeBy
+      return res
         .status(500)
         .send({ success: false, message: "Username or Email Already Exist" });
     const hashPassword = bcrypt.hashSync(password, 10);
@@ -27,13 +29,13 @@ export const userRegister = async (req, res) => {
       email,
       password: hashPassword,
       gender,
-      profilePic:avatar,
+      profilePic: avatar,
     });
     if (newUser) {
       await newUser.save();
       jwtToken(newUser._id, res);
     } else {
-      resizeBy
+      res
         .status(500)
         .send({ success: false, message: "Invalid user data" });
     }

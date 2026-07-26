@@ -39,20 +39,44 @@ const Login = () => {
     }
   };
   return (
-    <div className="flex flex-col items-center justify-center mix-w-full mx-auto">
+    <div
+      className="
+    min-h-screen
+    flex
+    items-center
+    justify-center
+    px-4
+    py-8
+  "
+    >
       <div
-        className="w-full p-6 rounded-lg shadow-lg
-          bg-gray-400 bg-clip-padding
-           backderop-filter backdrop-blur-lg bg-opacity-0"
+        className="
+w-full
+max-w-md
+rounded-3xl
+border
+border-white/20
+bg-slate-900/40
+backdrop-blur-xl
+shadow-2xl
+p-8
+"
       >
-        <h1 className="text-3xl font-bold text-center text-gray-300">
-          Login
-          <span className="text-gray-950"> Chatters </span>
+        <h1 className="text-center text-3xl md:text-4xl font-bold text-white">
+          Welcome Back
         </h1>
+
+        <p className="text-center text-gray-400 mt-2 mb-6">
+          Sign in to continue chatting
+        </p>
         <form onSubmit={handelSubmit} className="flex flex-col text-black">
           <div>
             <label className="label p-2">
-              <span className="font-bold text-gray-950 text-xl label-text">
+              <span className="
+text-gray-300
+font-medium
+text-sm
+">
                 Email :
               </span>
             </label>
@@ -62,12 +86,31 @@ const Login = () => {
               onChange={handelInput}
               placeholder="Enter your email"
               required
-              className="w-full input input-bordered h-10 bg-white rounded-2xl px-2"
+              className="
+w-full
+rounded-xl
+border
+border-slate-600
+bg-slate-800
+px-4
+py-3
+text-white
+placeholder:text-gray-400
+outline-none
+focus:border-sky-500
+focus:ring-2
+focus:ring-sky-500/30
+transition
+"
             />
           </div>
           <div>
             <label className="label p-2">
-              <span className="font-bold text-gray-950 text-xl label-text">
+              <span className="
+text-gray-300
+font-medium
+text-sm
+">
                 Password :
               </span>
             </label>
@@ -77,30 +120,55 @@ const Login = () => {
               onChange={handelInput}
               placeholder="Enter your password"
               required
-              className="w-full input input-bordered h-10 bg-white rounded-2xl px-2"
+              className="
+w-full
+rounded-xl
+border
+border-slate-600
+bg-slate-800
+px-4
+py-3
+text-white
+placeholder:text-gray-400
+outline-none
+focus:border-sky-500
+focus:ring-2
+focus:ring-sky-500/30
+transition
+"
             />
           </div>
           <button
             type="submit"
-            className="mt-4 self-center 
-                            w-auto px-2 py-1 bg-gray-950 
-                            text-lg hover:bg-gray-900 
-                            text-white rounded-lg hover: scale-105"
+            className="
+w-full
+mt-6
+py-3
+rounded-xl
+bg-sky-500
+text-white
+font-semibold
+transition-all
+duration-300
+hover:bg-sky-600
+hover:shadow-lg
+disabled:opacity-60
+"
           >
             {loading ? "loading.." : "Login"}
           </button>
         </form>
         <div className="pt-2">
-          <p
-            className="text-sm font-semibold
-                         text-gray-800"
-          >
+          <p className="text-center text-gray-400 mt-6">
             Don't have an Acount ?{" "}
             <Link to={"/register"}>
               <span
-                className="text-gray-950 
-                            font-bold underline cursor-pointer
-                             hover:text-green-950"
+               className="
+text-sky-400
+font-semibold
+hover:text-sky-300
+transition
+"
               >
                 Register Now!!
               </span>

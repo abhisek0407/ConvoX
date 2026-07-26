@@ -18,12 +18,12 @@ const userSchema = mongoose.Schema(
     gender: {
       type: String,
       required: true,
-      enum: ["male", "Female"],
+      enum: ["male", "female"],
     },
     password: {
       type: String,
       required: true,
-      minlenth: 6,
+      minLength: 6,
     },
     profilePic: {
       type: String,

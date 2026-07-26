@@ -159,7 +159,7 @@ shadow-md
         </form>
         <img
           onClick={() => navigate(`/profile/${authUser?._id}`)}
-          src={authUser?.profilepic}
+          src={authUser?.profilePic}
           className=" h-12 w-12 rounded-full object-cover border-2 border-sky-500 cursor-pointer hover:scale-105 transition "
         />
       </div>
@@ -179,7 +179,7 @@ shadow-md
                       className={`avatar ${isOnline[index] ? "online" : ""}`}
                     >
                       <div className="w-12 h-12 rounded-full overflow-hidden border border-slate-600">
-                        <img src={user.profilepic} alt="user.img" />
+                        <img src={user.profilePic} alt="user.img" />
                       </div>
                     </div>
                     <div className="flex flex-col flex-1">
@@ -235,7 +235,7 @@ shadow-md
                           className={`avatar ${isOnline[index] ? "online" : ""}`}
                         >
                           <div className="w-12 rounded-full">
-                            <img src={user.profilepic} alt="user.img" />
+                            <img src={user.profilePic} alt="user.img" />
                           </div>
                         </div>
                         <div className="flex flex-col flex-1">

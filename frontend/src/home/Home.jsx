@@ -13,6 +13,7 @@ const Home = () => {
     setIsSidebarVisible(true);
     setSelectedUser(null);
   };
+  console.log("Home selectedUser:", selectedUser);
   return (
     <div
       className="
