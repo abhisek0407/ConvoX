@@ -19,9 +19,13 @@ export const userRegister = async (req, res) => {
     // const profileGirl =
     //   profilePic ||
     //   `https://avatar.iran.liara.run/public/girl?username=${username}`;
-    const avatar =
-      profilePic ||
-      `https://api.dicebear.com/9.x/adventurer/svg?seed=${encodeURIComponent(username)}`;
+    let avatar;
+
+    if (gender === "male") {
+      avatar = `https://api.dicebear.com/9.x/adventurer/svg?seed=${encodeURIComponent(username)}`;
+    } else {
+      avatar = `https://api.dicebear.com/9.x/notionists/svg?seed=${encodeURIComponent(username)}`;
+    }
 
     const newUser = new User({
       fullname,
@@ -35,9 +39,7 @@ export const userRegister = async (req, res) => {
       await newUser.save();
       jwtToken(newUser._id, res);
     } else {
-      res
-        .status(500)
-        .send({ success: false, message: "Invalid user data" });
+      res.status(500).send({ success: false, message: "Invalid user data" });
     }
     res.status(201).send({
       _id: newUser._id,
@@ -60,17 +62,17 @@ export const userLogin = async (req, res) => {
     const { email, password } = req.body;
     const user = await User.findOne({ email });
     if (!user)
-      return (
-        res.status(500),
-        send({ success: false, message: "Email doesn't Exist Register" })
-      );
+      return res.status(500).send({
+        success: false,
+        message: "Email doesn't exist. Please register.",
+      });
     const comparePass = bcrypt.compareSync(password, user.password || "");
 
     if (!comparePass)
-      return (
-        res.status(500),
-        send({ success: false, message: "Email or password doesn;t matching" })
-      );
+      return res.status(500).send({
+        success: false,
+        message: "Email or password doesn't match.",
+      });
     jwtToken(user._id, res);
     res.status(200).send({
       _id: user._id,
