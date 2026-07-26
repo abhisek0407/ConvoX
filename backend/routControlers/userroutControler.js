@@ -26,7 +26,7 @@ export const userRegister = async (req, res) => {
     } else {
       avatar = `https://api.dicebear.com/9.x/notionists/svg?seed=${encodeURIComponent(username)}`;
     }
-
+    
     const newUser = new User({
       fullname,
       username,
