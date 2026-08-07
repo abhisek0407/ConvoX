@@ -163,13 +163,21 @@ http://localhost:5000
 
 # 📸 Screenshots
 
-Add screenshots of the following:
+## 📝 Registration Page
 
-- Login Page
-- Registration Page
-- Chat Dashboard
-- Real-Time Messaging
-- Mobile Responsive View
+![Registration Page](images/signup.png)
+
+---
+
+## 🔑 Login Page
+
+![Login Page](images/login.png)
+
+---
+
+## 💬 Chat Interface
+
+![Chat Interface](images/chat.png)
 
 ---
 
